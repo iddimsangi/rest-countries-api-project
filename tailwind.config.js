@@ -17,6 +17,9 @@ module.exports = {
         "very-light-gray": "hsl(0, 0%, 98%)",
         white: "hsl(0, 0%, 100%)",
       },
+      fontFamily: {
+        nunito: ["Nunito Sans", "sans"],
+      },
     },
   },
   plugins: [],
