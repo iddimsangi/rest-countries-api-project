@@ -1,4 +1,5 @@
 import sprite from "./sprite.svg";
+import germanyFlag from "./images/germany.svg";
 function App() {
   return (
     <div className="w-full min-h-full flex flex-col space-y-2 bg-[#292C34]">
@@ -17,7 +18,7 @@ function App() {
         </h2>
       </header>
       <main>
-        <div className="flex flex-col space-y-5 bg-red-500 min-w-full px-4">
+        <div className="flex flex-col space-y-5 min-w-full px-4">
           <form
             className="bg-dark-blue flex mt-4 relative items-center w-full rounded-2xl shadow-lg"
             action="#"
@@ -37,10 +38,12 @@ function App() {
               placeholder="Search for country"
             />
           </form>
-          <select name="countries" id="countries">
-            <option value="" disabled selected>
-              Filter By Region
-            </option>
+          <select
+            className="w-1/2 py-4 text-very-light-gray bg-dark-blue border-0 rounded-md shadow-xl"
+            name="countries"
+            id="countries"
+          >
+            <option value="">Filter By Region</option>
             <option value="Africa">Africa</option>
             <option value="America">America</option>
             <option value="Asia">Asia</option>
@@ -48,6 +51,110 @@ function App() {
             <option value="Oceania">Oceania</option>
           </select>
         </div>
+        <section className="min-h-full flex flex-col space-y-5 justify-center items-center p-12">
+          <div className="flex flex-col min-w-full space-y-4 bg-[#222c35] rounded-lg shadow-2xl">
+            <img src={germanyFlag} className="w-full rounded-t-lg" alt="flag" />
+            <div className="flex flex-col space-y-4 p-7 pb-11 text-white">
+              <h2 className="text-bold text-xl font-semibold">Germany</h2>
+              <ul>
+                <li className="font-light mb-1">
+                  <span className="font-semibold">Population: </span>1,789,009
+                </li>
+                <li className="font-light mb-1">
+                  <span className="font-semibold">Region: </span>Europe
+                </li>
+                <li className="font-light">
+                  <span className="font-semibold">Capital: </span>Berlin
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="flex flex-col min-w-full space-y-4 bg-[#222c35] rounded-lg shadow-2xl">
+            <img src={germanyFlag} className="w-full rounded-t-lg" alt="flag" />
+            <div className="flex flex-col space-y-4 p-7 pb-11 text-white">
+              <h2 className="text-bold text-xl font-semibold">Germany</h2>
+              <ul>
+                <li className="font-light mb-1">
+                  <span className="font-semibold">Population: </span>1,789,009
+                </li>
+                <li className="font-light mb-1">
+                  <span className="font-semibold">Region: </span>Europe
+                </li>
+                <li className="font-light">
+                  <span className="font-semibold">Capital: </span>Berlin
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="flex flex-col min-w-full space-y-4 bg-[#222c35] rounded-lg shadow-2xl">
+            <img src={germanyFlag} className="w-full rounded-t-lg" alt="flag" />
+            <div className="flex flex-col space-y-4 p-7 pb-11 text-white">
+              <h2 className="text-bold text-xl font-semibold">Germany</h2>
+              <ul>
+                <li className="font-light mb-1">
+                  <span className="font-semibold">Population: </span>1,789,009
+                </li>
+                <li className="font-light mb-1">
+                  <span className="font-semibold">Region: </span>Europe
+                </li>
+                <li className="font-light">
+                  <span className="font-semibold">Capital: </span>Berlin
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="flex flex-col min-w-full space-y-4 bg-[#222c35] rounded-lgshadow-2xl">
+            <img src={germanyFlag} className="w-full rounded-t-lg" alt="flag" />
+            <div className="flex flex-col space-y-4 p-7 pb-11 text-white">
+              <h2 className="text-bold text-xl font-semibold">Germany</h2>
+              <ul>
+                <li className="font-light mb-1">
+                  <span className="font-semibold">Population: </span>1,789,009
+                </li>
+                <li className="font-light mb-1">
+                  <span className="font-semibold">Region: </span>Europe
+                </li>
+                <li className="font-light">
+                  <span className="font-semibold">Capital: </span>Berlin
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="flex flex-col min-w-full space-y-4 bg-[#222c35] rounded-lg shadow-2xl">
+            <img src={germanyFlag} className="w-full rounded-t-lg" alt="flag" />
+            <div className="flex flex-col space-y-4 p-7 pb-11 text-white">
+              <h2 className="text-bold text-xl font-semibold">Germany</h2>
+              <ul>
+                <li className="font-light mb-1">
+                  <span className="font-semibold">Population: </span>1,789,009
+                </li>
+                <li className="font-light mb-1">
+                  <span className="font-semibold">Region: </span>Europe
+                </li>
+                <li className="font-light">
+                  <span className="font-semibold">Capital: </span>Berlin
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="flex flex-col min-w-full space-y-4 bg-[#222c35] rounded-lg shadow-2xl">
+            <img src={germanyFlag} className="w-full rounded-t-lg" alt="flag" />
+            <div className="flex flex-col space-y-4 p-7 pb-11 text-white">
+              <h2 className="text-bold text-xl font-semibold">Germany</h2>
+              <ul>
+                <li className="font-light mb-1">
+                  <span className="font-semibold">Population: </span>1,789,009
+                </li>
+                <li className="font-light mb-1">
+                  <span className="font-semibold">Region: </span>Europe
+                </li>
+                <li className="font-light">
+                  <span className="font-semibold">Capital: </span>Berlin
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   );
