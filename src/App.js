@@ -1,5 +1,5 @@
 import "./App.css";
-import sprite from "./prite.svg";
+import sprite from "./sprite.svg";
 function App() {
   return (
     <div className="App">
