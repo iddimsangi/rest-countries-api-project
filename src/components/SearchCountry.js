@@ -2,7 +2,7 @@ import sprite from "../sprite.svg";
 function SearchCountry() {
   return (
     <form
-      className="bg-dark-blue flex mt-4 relative items-center w-full rounded-2xl shadow-lg"
+      className="bg-dark-blue flex mt-4 relative items-center w-full md:max-w-md rounded-2xl shadow-lg"
       action="#"
     >
       <svg
