@@ -16,7 +16,7 @@ function CountryDetails() {
             </svg>{" "}
             Back
           </button>
-          <img src={germanyFlag} className="w-full" alt="flag" />
+          <img src={germanyFlag} className="w-full shadow-2xl" alt="flag" />
         </div>
         <div className="flex flex-col space-y-4 p-7 justify-center md:w-1/2  text-white text-sm  md:pr-1">
           <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-6">
