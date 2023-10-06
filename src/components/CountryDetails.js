@@ -2,7 +2,7 @@ import germanyFlag from "../images/germany.svg";
 import sprite from "../sprite.svg";
 function CountryDetails() {
   return (
-    <section className="min-h-full flex flex-col space-y-5 justify-center items-center p-12 md:pr-2">
+    <section className="min-h-full flex flex-col space-y-5 justify-center items-center p-12  md:p-0">
       <div className="flex flex-col min-w-full space-y-4 md:flex-row md:space-x-4">
         <div className="flex flex-col space-y-12 md:w-1/2 md:p-4 md:justify-between md:max-w-xl">
           <button className="py-2 px-4 bg-dark-blue text-base shadow-2xl text-white flex items-center w-28">
@@ -58,7 +58,7 @@ function CountryDetails() {
               </ul>
             </div>
           </div>
-          <div className="flex flex-col  md:flex-row md:space-y-0 md:items-center md:space-x-6 text-sm ">
+          <div className="flex flex-col space-y-4  md:flex-row md:space-y-0 md:items-center md:space-x-6 text-sm ">
             <h2 className=" text-white text-sm font-semibold">
               Border countries:
             </h2>
