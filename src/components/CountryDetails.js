@@ -4,7 +4,7 @@ function CountryDetails() {
   return (
     <section className="min-h-full flex flex-col space-y-5 justify-center items-center p-12 md:pr-2">
       <div className="flex flex-col min-w-full space-y-4 md:flex-row md:space-x-4">
-        <div className="flex flex-col space-y-4 md:w-1/2 md:p-4 md:justify-between md:max-w-xl">
+        <div className="flex flex-col space-y-12 md:w-1/2 md:p-4 md:justify-between md:max-w-xl">
           <button className="py-2 px-4 bg-dark-blue text-base shadow-2xl text-white flex items-center w-28">
             <svg
               fill="white"
