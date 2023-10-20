@@ -16,7 +16,8 @@ function Country({ flagImg, countryName, population, region, capital }) {
             {region}
           </li>
           <li className="font-light">
-            <span className="font-semibold text-sm">Capital: </span>Berlin
+            <span className="font-semibold text-sm">Capital: </span>
+            {capital}
           </li>
         </ul>
       </div>
