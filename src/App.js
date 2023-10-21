@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import sprite from "./sprite.svg";
 import CountriesList from "./components/CountriesList";
 import SearchCountry from "./components/SearchCountry";
 import CountriesCategories from "./components/CountriesCategories";
 import Loader from "./components/Loader";
-// import CountryDetails from "./components/CountryDetails";
+import CountryDetails from "./components/CountryDetails";
 function App() {
   const [countries, setCountries] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -37,18 +38,26 @@ function App() {
         </nav>
       </header>
       <main>
-        {isLoading ? (
-          <Loader />
-        ) : (
-          <>
-            {" "}
-            <div className="flex flex-col space-y-5 min-w-xl px-4 md:flex-row sm:flex-row sm:space-x-12 md:space-y-3 md:justify-between md:max-w-[1440px]">
-              <SearchCountry />
-              <CountriesCategories />
-            </div>
-            <CountriesList countries={countries} />
-          </>
-        )}
+        <Router>
+          {isLoading ? (
+            <Loader />
+          ) : (
+            <>
+              {" "}
+              <div className="flex flex-col space-y-5 min-w-xl px-4 md:flex-row sm:flex-row sm:space-x-12 md:space-y-3 md:justify-between md:max-w-[1440px]">
+                <SearchCountry />
+                <CountriesCategories />
+              </div>
+              <Routes>
+                <Route
+                  path="/"
+                  element={<CountriesList countries={countries} />}
+                />
+                <Route path="/countryDetails" element={<CountryDetails />} />
+              </Routes>
+            </>
+          )}
+        </Router>
       </main>
     </div>
   );
