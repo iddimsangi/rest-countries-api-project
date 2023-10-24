@@ -12,6 +12,7 @@ function CountryDetails() {
     fetch(`https://restcountries.com/v3.1/name/${location.state.countryName}`)
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         setCountryData(data[0]); // Assuming the API response is an array
         setIsLoading(false);
       })
@@ -41,6 +42,7 @@ function CountryDetails() {
     borders,
   } = countryData;
   console.log(currencies);
+  console.log(languages);
   return (
     <section className="min-h-full flex flex-col space-y-5 justify-center items-center p-12  md:p-0">
       <div className="flex flex-col min-w-full space-y-4 md:flex-row md:space-x-4">

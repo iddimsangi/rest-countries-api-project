@@ -6,8 +6,8 @@ import Loader from "./components/Loader";
 import CountryDetails from "./components/CountryDetails";
 function App() {
   const [countries, setCountries] = useState([]);
-  const [selectedCountry, setselectedCountry] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+  const [selectedRegion, setSelectedRegion] = useState("");
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
       .then((response) => response.json())
@@ -16,7 +16,7 @@ function App() {
         setIsLoading(false);
       });
   }, []);
-
+  const selectRegionHandler = (region) => setSelectedRegion(region);
   return (
     <div className="w-full min-h-full flex flex-col justify-center items-center space-y-2 bg-[#292C34]">
       <header className="min-w-full flex flex-col justify-center items-center px-4 py-7 bg-dark-blue">
@@ -44,12 +44,15 @@ function App() {
               <Routes>
                 <Route
                   path="/"
-                  element={<CountriesList countries={countries} />}
+                  element={
+                    <CountriesList
+                      countries={countries}
+                      selectRegionHandler={selectRegionHandler}
+                      selectedRegion={selectedRegion}
+                    />
+                  }
                 />
-                <Route
-                  path="/country"
-                  element={<CountryDetails selectedCountry={selectedCountry} />}
-                />
+                <Route path="/country" element={<CountryDetails />} />
               </Routes>
             </>
           )}
