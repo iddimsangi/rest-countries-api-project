@@ -8,6 +8,7 @@ function App() {
   const [countries, setCountries] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedRegion, setSelectedRegion] = useState("");
+  const [isLighttheme, setIsLighttheme] = useState(false);
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
       .then((response) => response.json())
@@ -16,22 +17,39 @@ function App() {
         setIsLoading(false);
       });
   }, []);
+  console.log(isLighttheme);
   const selectRegionHandler = (region) => setSelectedRegion(region);
   return (
-    <div className="w-full min-h-full flex flex-col justify-center items-center space-y-2 bg-[#292C34]">
-      <header className="min-w-full flex flex-col justify-center items-center px-4 py-7 bg-dark-blue">
-        <nav className="text-white w-full flex items-center px-4 justify-between  md:max-w-[1440px]">
+    <div
+      className={`w-full min-h-full flex flex-col justify-center items-center space-y-2 bg-${
+        isLighttheme ? "white" : "dark-blue"
+      }`}
+    >
+      <header
+        className={`min-w-full flex flex-col shadow-lg justify-center items-center px-4 py-7 bg-${
+          isLighttheme ? "white" : "dark-blue"
+        }`}
+      >
+        <nav
+          className={`text-${
+            isLighttheme ? "black" : "white"
+          } w-full flex items-center px-4 justify-between  md:max-w-[1440px]`}
+        >
           <h1 className="font-bold">Where in the world?</h1>
           <h2 className="flex items-center text-sm font-light">
-            <svg
-              fill="white"
-              height={"1.5rem"}
-              width={"2rem"}
-              className="cursor-pointer"
-            >
-              <use xlinkHref={`${sprite}#icon-moon`}></use>
-            </svg>
-            Dark Mode
+            <button onClick={() => setIsLighttheme(!isLighttheme)}>
+              <svg
+                fill={isLighttheme ? "black" : "white"}
+                height={"1.5rem"}
+                width={"2rem"}
+                className="cursor-pointer"
+              >
+                <use
+                  xlinkHref={`${sprite}#icon-${isLighttheme ? "sun" : "moon"}`}
+                ></use>
+              </svg>
+            </button>
+            {isLighttheme ? "Light Mode" : "Dark Mode"}
           </h2>
         </nav>
       </header>
@@ -49,10 +67,14 @@ function App() {
                       countries={countries}
                       selectRegionHandler={selectRegionHandler}
                       selectedRegion={selectedRegion}
+                      isLighttheme={isLighttheme}
                     />
                   }
                 />
-                <Route path="/country" element={<CountryDetails />} />
+                <Route
+                  path="/country"
+                  element={<CountryDetails isLighttheme={isLighttheme} />}
+                />
               </Routes>
             </>
           )}

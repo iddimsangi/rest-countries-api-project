@@ -3,16 +3,16 @@ import Loader from "./Loader";
 import { Link, useLocation } from "react-router-dom";
 import sprite from "../sprite.svg";
 
-function CountryDetails() {
+function CountryDetails({ isLighttheme }) {
   const location = useLocation();
   const [isLoading, setIsLoading] = useState(true);
   const [countryData, setCountryData] = useState(null);
-
+  console.log(isLighttheme);
   useEffect(() => {
     fetch(`https://restcountries.com/v3.1/name/${location.state.countryName}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setCountryData(data[0]); // Assuming the API response is an array
         setIsLoading(false);
       })
@@ -42,15 +42,21 @@ function CountryDetails() {
     currencies,
     borders,
   } = countryData;
-  console.log(altSpellings);
+  // console.log(altSpellings);
   return (
     <section className="flex h-screen flex-col space-y-5  items-center p-12  md:p-0 md:w-[1040px]">
       <div className="flex flex-col min-w-full space-y-4 md:flex-row md:space-x-4">
         <div className="flex flex-col space-y-12 md:w-1/2 md:p-4 md:justify-between md:max-w-xl">
           <Link to={"/"}>
-            <button className="py-2 px-4 bg-dark-blue text-base shadow-2xl text-white flex items-center w-28">
+            <button
+              className={`py-2 px-4 bg-${
+                isLighttheme ? "white" : "dark-blue"
+              } text-base custom-shadow text-${
+                isLighttheme ? "black" : "white"
+              } flex items-center w-28`}
+            >
               <svg
-                fill="white"
+                fill={isLighttheme ? "black" : "white"}
                 height={"1.2rem"}
                 width={"2rem"}
                 className="cursor-pointer"
@@ -62,15 +68,23 @@ function CountryDetails() {
           </Link>
           <img
             src={countryData.flags.png}
-            className="w-full shadow-2xl h-72"
+            className="w-full custom-shadow h-72"
             alt="flag"
           />
         </div>
         <div className="flex flex-col space-y-4  justify-center md:min-w-1/2  text-white text-sm  md:pr-1">
-          <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-6">
-            <div className="flex flex-col w-64 space-y-4">
+          <div
+            className={`flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-6 text-${
+              isLighttheme ? "black" : "white"
+            }`}
+          >
+            <div
+              className={`flex flex-col w-72 space-y-4  text-${
+                isLighttheme ? "black" : "white"
+              }`}
+            >
               <h2 className="text-bold text-xl font-semibold">{name.common}</h2>
-              <ul className="text-sm">
+              <ul className={`text-sm`}>
                 <li className="font-light flex items-center">
                   <span className="font-semibold">Native Language: </span>
                   {altSpellings && altSpellings.length > 0
@@ -95,7 +109,7 @@ function CountryDetails() {
                 </li>
               </ul>
             </div>
-            <div className="flex flex-col space-y-3">
+            <div className="flex flex-col space-y-3 w-72">
               <ul className="mt-8">
                 <li className="font-light flex items-center">
                   <span className="font-semibold">Top Level Domain: </span>
@@ -126,15 +140,23 @@ function CountryDetails() {
             </div>
           </div>
           <div className="flex flex-col space-y-4  md:flex-row md:space-y-0 md:items-center md:space-x-6 text-sm">
-            <h2 className=" text-white text-sm font-semibold">
+            <h2
+              className={`text-sm font-semibold text-${
+                isLighttheme ? "black" : "white"
+              }`}
+            >
               Border countries:
             </h2>
-            <div className="flex space-x-2">
+            <div className="flex space-x-2 ">
               {borders && Array.isArray(borders) ? (
                 borders.map((border) => (
                   <button
                     key={border}
-                    className="bg-dark-blue text-sm text-very-light-gray py-1 px-2 shadow-2xl"
+                    className={`bg-${
+                      isLighttheme ? "white" : "dark-blue"
+                    } text-sm text-${
+                      isLighttheme ? "black" : "very-light-gray"
+                    } custom-shadow py-1 px-2 shadow-2xl`}
                   >
                     {border}
                   </button>

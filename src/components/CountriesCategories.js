@@ -1,7 +1,11 @@
-function CountriesCategories({ selectRegionHandler }) {
+function CountriesCategories({ selectRegionHandler, isLighttheme }) {
   return (
     <select
-      className="w-1/2 py-4 text-very-light-gray bg-dark-blue border-0 md:max-w-[200px] rounded-md shadow-xl"
+      className={`w-1/2 py-4 text-${
+        isLighttheme ? "black" : "very-light-gray"
+      } bg-${
+        isLighttheme ? "white" : "dark-blue"
+      } border-0 md:max-w-[200px] rounded-md shadow-xl`}
       name="countries"
       id="countries"
       onChange={(e) => selectRegionHandler(e.target.value)}

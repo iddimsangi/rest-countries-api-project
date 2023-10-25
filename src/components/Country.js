@@ -6,7 +6,7 @@ function Country({ flagImg, countryName, population, region, capital }) {
     navigate("/country", { state: { countryName: countryName } });
   };
   return (
-    <div className="flex flex-col max-w-[400px] h-[462px] space-y-4 bg-[#222c35] rounded-lg shadow-2xl cursor-pointer">
+    <div className="flex flex-col max-w-[400px] h-[462px] space-y-4 bg-[#222c35]  rounded-lg shadow-2xl cursor-pointer">
       <img
         src={flagImg}
         className="w-full h-56 rounded-t-lg"

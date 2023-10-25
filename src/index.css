@@ -20,3 +20,7 @@ label {
     outline: none; /* Remove the default focus outline */
     border-color: #000; /* Change border color when focused */
   }
+.custom-shadow{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+ 
