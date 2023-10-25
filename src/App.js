@@ -17,7 +17,6 @@ function App() {
         setIsLoading(false);
       });
   }, []);
-  console.log(isLighttheme);
   const selectRegionHandler = (region) => setSelectedRegion(region);
   return (
     <div
