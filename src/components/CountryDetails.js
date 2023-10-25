@@ -32,6 +32,7 @@ function CountryDetails() {
 
   const {
     name,
+    altSpellings,
     languages,
     population,
     region,
@@ -41,10 +42,9 @@ function CountryDetails() {
     currencies,
     borders,
   } = countryData;
-  console.log(currencies);
-  console.log(languages);
+  console.log(altSpellings);
   return (
-    <section className="min-h-full flex flex-col space-y-5 justify-center items-center p-12  md:p-0">
+    <section className="flex h-screen flex-col space-y-5  items-center p-12  md:p-0 md:w-[1040px]">
       <div className="flex flex-col min-w-full space-y-4 md:flex-row md:space-x-4">
         <div className="flex flex-col space-y-12 md:w-1/2 md:p-4 md:justify-between md:max-w-xl">
           <Link to={"/"}>
@@ -60,37 +60,36 @@ function CountryDetails() {
               Back
             </button>
           </Link>
-          {/* Assuming you have a flag image URL */}
           <img
             src={countryData.flags.png}
-            className="w-full shadow-2xl"
+            className="w-full shadow-2xl h-72"
             alt="flag"
           />
         </div>
-        <div className="flex flex-col space-y-4 p-7 justify-center md:w-1/2  text-white text-sm  md:pr-1">
+        <div className="flex flex-col space-y-4  justify-center md:min-w-1/2  text-white text-sm  md:pr-1">
           <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-6">
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col w-64 space-y-4">
               <h2 className="text-bold text-xl font-semibold">{name.common}</h2>
               <ul className="text-sm">
-                <li className="font-light">
+                <li className="font-light flex items-center">
                   <span className="font-semibold">Native Language: </span>
-                  {languages.nativeName && languages.nativeName.eng
-                    ? languages.nativeName.eng.common
+                  {altSpellings && altSpellings.length > 0
+                    ? altSpellings[1]
                     : "Not specified"}
                 </li>
-                <li className="font-light mb-1">
+                <li className="font-light mb-1 flex items-center">
                   <span className="font-semibold">Population: </span>
                   {population}
                 </li>
-                <li className="font-light mb-1">
+                <li className="font-light mb-1 flex items-center">
                   <span className="font-semibold">Region: </span>
                   {region}
                 </li>
-                <li className="font-light">
-                  <span className="font-semibold">Sub Regional: </span>
+                <li className="font-light flex items-center">
+                  <span className="font-semibold block">Sub Regional:</span>
                   {subregion}
                 </li>
-                <li className="font-light">
+                <li className="font-light flex items-center">
                   <span className="font-semibold">Capital: </span>
                   {capital[0]}
                 </li>
@@ -98,26 +97,35 @@ function CountryDetails() {
             </div>
             <div className="flex flex-col space-y-3">
               <ul className="mt-8">
-                <li className="font-light">
+                <li className="font-light flex items-center">
                   <span className="font-semibold">Top Level Domain: </span>
                   {tld[0]}
                 </li>
-                <li className="font-light mb-1">
+                <li className="font-light mb-1 flex items-center">
                   <span className="font-semibold">Currencies: </span>
-                  {currencies && currencies.XAF
-                    ? currencies.XAF.name
+                  {currencies && Object.keys(currencies).length > 0
+                    ? Object.keys(currencies).map((currencyCode) => (
+                        <div key={currencyCode}>
+                          <p>{currencies[currencyCode].name}</p>
+                        </div>
+                      ))
                     : "Not specified"}
                 </li>
-                <li className="font-light mb-1">
-                  <span className="font-semibold">Languages: </span>
-                  {languages && languages.eng
-                    ? languages.eng.common
+
+                <li className="font-light mb-1 flex items-center">
+                  <span className="font-semibold mr-1">Languages: </span>
+                  {languages && Object.keys(languages).length > 0
+                    ? Object.keys(languages).map((lang) => (
+                        <div key={lang}>
+                          <p className="">{languages[lang]},</p>
+                        </div>
+                      ))
                     : "Not specified"}
                 </li>
               </ul>
             </div>
           </div>
-          <div className="flex flex-col space-y-4  md:flex-row md:space-y-0 md:items-center md:space-x-6 text-sm ">
+          <div className="flex flex-col space-y-4  md:flex-row md:space-y-0 md:items-center md:space-x-6 text-sm">
             <h2 className=" text-white text-sm font-semibold">
               Border countries:
             </h2>
