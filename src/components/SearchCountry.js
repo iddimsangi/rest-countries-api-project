@@ -22,7 +22,7 @@ function SearchCountry({ handleSearch, searchQuery, isLighttheme }) {
         onChange={(e) => handleSearch(e.target.value)}
         className={`bg-transparent py-5 text-md outline-none pl-24  placeholder:text-${
           isLighttheme ? "black" : "white"
-        } text-very-light-gray w-11/12`}
+        } text-${isLighttheme ? "black" : "very-light-gray"} w-11/12`}
         placeholder="Search for country"
       />
     </form>
