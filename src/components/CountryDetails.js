@@ -79,8 +79,8 @@ function CountryDetails({ isLighttheme }) {
             }`}
           >
             <div
-              className={`flex flex-col w-72 space-y-4  text-${
-                isLighttheme ? "black" : "white"
+              className={`flex flex-col w-72 space-y-4 custom-text-${
+                isLighttheme ? "dark" : "light"
               }`}
             >
               <h2 className="text-bold text-xl font-semibold">{name.common}</h2>
@@ -110,7 +110,11 @@ function CountryDetails({ isLighttheme }) {
               </ul>
             </div>
             <div className="flex flex-col space-y-3 w-72">
-              <ul className="mt-8">
+              <ul
+                className={`mt-8 custom-text-${
+                  isLighttheme ? "dark" : "light"
+                }`}
+              >
                 <li className="font-light flex items-center">
                   <span className="font-semibold">Top Level Domain: </span>
                   {tld[0]}
@@ -141,8 +145,8 @@ function CountryDetails({ isLighttheme }) {
           </div>
           <div className="flex flex-col space-y-4  md:flex-row md:space-y-0 md:items-center md:space-x-6 text-sm">
             <h2
-              className={`text-sm font-semibold text-${
-                isLighttheme ? "black" : "white"
+              className={`text-sm font-semibold custom-text-${
+                isLighttheme ? "dark" : "light"
               }`}
             >
               Border countries:
@@ -154,15 +158,17 @@ function CountryDetails({ isLighttheme }) {
                     key={border}
                     className={`bg-${
                       isLighttheme ? "white" : "dark-blue"
-                    } text-sm text-${
-                      isLighttheme ? "black" : "very-light-gray"
+                    } text-sm custom-text-${
+                      isLighttheme ? "dark" : "light"
                     } custom-shadow py-1 px-2 shadow-2xl`}
                   >
                     {border}
                   </button>
                 ))
               ) : (
-                <p>No border countries found</p>
+                <p className={`custom-text-${isLighttheme ? "dark" : "light"}`}>
+                  No border countries found
+                </p>
               )}
             </div>
           </div>

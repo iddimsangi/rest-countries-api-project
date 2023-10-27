@@ -23,4 +23,15 @@ label {
 .custom-shadow{
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
- 
+.dark-theme{
+background-color:hsl(207, 26%, 17%);
+}
+.light-theme{
+  background-color:#fff;
+}
+.custom-text-dark{
+color:#000;
+}
+.custom-text-light{
+color:hsl(0, 0%, 98%);
+}

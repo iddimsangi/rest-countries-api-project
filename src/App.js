@@ -18,16 +18,17 @@ function App() {
       });
   }, []);
   const selectRegionHandler = (region) => setSelectedRegion(region);
+  const themeHandler = () => setIsLighttheme(!isLighttheme);
   return (
     <div
-      className={`w-full min-h-full flex flex-col justify-center items-center space-y-2 bg-${
-        isLighttheme ? "white" : "dark-blue"
-      }`}
+      className={`w-full min-h-full flex flex-col justify-center items-center space-y-2 ${
+        isLighttheme ? "light" : "dark"
+      }-theme`}
     >
       <header
-        className={`min-w-full flex flex-col shadow-lg justify-center items-center px-4 py-7 bg-${
-          isLighttheme ? "white" : "dark-blue"
-        }`}
+        className={`min-w-full flex flex-col shadow-lg justify-center items-center px-4 py-7 ${
+          isLighttheme ? "light" : "dark"
+        }-theme`}
       >
         <nav
           className={`text-${
@@ -36,7 +37,7 @@ function App() {
         >
           <h1 className="font-bold">Where in the world?</h1>
           <h2 className="flex items-center text-sm font-light">
-            <button onClick={() => setIsLighttheme(!isLighttheme)}>
+            <button onClick={themeHandler}>
               <svg
                 fill={isLighttheme ? "black" : "white"}
                 height={"1.5rem"}
@@ -55,7 +56,7 @@ function App() {
       <main>
         <Router>
           {isLoading ? (
-            <Loader />
+            <Loader isLighttheme={isLighttheme} />
           ) : (
             <>
               <Routes>

@@ -4,7 +4,7 @@ function SearchCountry({ handleSearch, searchQuery, isLighttheme }) {
     <form
       className={`bg-${
         isLighttheme ? "white" : "dark-blue"
-      } flex mt-4 relative items-center w-full md:max-w-md rounded-md shadow-lg`}
+      } flex mt-4 relative items-center w-full md:max-w-md rounded-md custom-shadow`}
       action="#"
     >
       <svg

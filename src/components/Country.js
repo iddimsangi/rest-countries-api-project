@@ -15,9 +15,9 @@ function Country({
   console.log(isLighttheme);
   return (
     <div
-      className={`flex flex-col max-w-[400px] h-[462px] space-y-4 bg-${
-        isLighttheme ? "white" : "[#222c35]"
-      }  rounded-lg custom-shadow cursor-pointer`}
+      className={`flex flex-col max-w-[400px] h-[462px] space-y-4 ${
+        isLighttheme ? "light" : "dark"
+      }-theme  rounded-lg custom-shadow cursor-pointer`}
     >
       <img
         src={flagImg}

@@ -11,7 +11,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        "dark-blue": "hsl(209, 23%, 22%)",
+        "dark-blue": "hsl(222, 20%, 22%)",
         "very-dark-blue-bg": "hsl(207, 26%, 17%)",
         "very-dark-blue-text": "hsl(200, 15%, 8%)",
         "dark-gray": "hsl(0, 0%, 52%)",
