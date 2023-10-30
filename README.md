@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](https://github.com/iddimsangi/clipboard-landing-page/blob/master/design/desktop-design.jpg)
+![](https://github.com/iddimsangi/rest-countries-api-project/blob/master/src/images/design/desktop-design-home-dark.jpg)
 
 ### Links
 
