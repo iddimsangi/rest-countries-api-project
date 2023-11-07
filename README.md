@@ -77,7 +77,7 @@ I will continue to practice using Tailwind CSS with React, and my upcoming proje
 
 ### Useful resources
 
-- [Tailwindcss documentation](https://tailwindcss.com/) - This helped me for buiding,guide and read all css clases reason. I really liked this pattern and will use it going forward.
+- [Sass documentation](https://https://sass-lang.com//) - This helped me for buiding,guide and read all css clases reason. I really liked this pattern and will use it going forward.
 
 ## Author
 
